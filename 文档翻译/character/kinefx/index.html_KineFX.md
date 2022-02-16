@@ -19,7 +19,7 @@ For definitions of KineFX terminology, see the [Glossary](https://www.sidefx.com
 ## What is procedural rigging?（什么是程序化绑定？）
 
 The KineFX framework is built on the principles of _procedural rigging_. Procedural rigging allows you to iterate on your rigs quickly, experiment non-destructively, and explore set-ups without having to fear that you will break anything like you would with a static graph system. For example, with KineFX you can reconfigure a rig while animating, delete entire parts of an animated hierarchy and not lose its capture (skin) or animation, or unparent all your points and retain their positions (world space transforms).
-==KineFX框架是建立在程序化绑定的框架之上的。_程序化绑定_允许你快速迭代你的绑定，进行非破坏性的实验并探索设置，而不必担心你会像静态图形系统那样破坏任何东西。例如，在KineFX中，你可以在制作动画时重新绑定，删除动画层次的整个部分而不会丢失其捕获（皮肤）或动画，或者解除所有点的父子关系而保留它们的位置（世界空间变换）。==
+==KineFX框架是建立在程序化绑定的框架之上的。_程序化绑定_ 允许你快速迭代你的绑定，进行非破坏性的实验并探索设置，而不必担心你会像静态图形系统那样破坏任何东西。例如，在KineFX中，你可以在制作动画时重新绑定，删除动画层次的整个部分而不会丢失其捕获（皮肤）或动画，或者解除所有点的父子关系而保留它们的位置（世界空间变换）。==
 
 With KineFX, joint data is simpler, the transform model is simpler, your input stream is always there and you will never lose your original data, everything by default lives in world space (but it is easy to switch between world and local), and the framework is attribute-driven by nature.
 ==使用KineFX，联合数据更简单，变换模型更简单，你的输入流总是在那里，你永远不会丢失原始数据，所有东西默认存在于世界空间中（但很容易在世界和本地之间切换），而框架本质是上通过属性驱动的。==

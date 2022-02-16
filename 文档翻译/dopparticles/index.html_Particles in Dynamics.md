@@ -13,14 +13,15 @@ Particles in the dynamics environment is more useful than the old way of using P
 
 ---
 
-## GETTING STARTED
+## GETTING STARTED（开始）
 
-- [Emitting（）](https://www.sidefx.com/docs/houdini/dopparticles/emitting.html)
+- [Emitting（发射粒子）](https://www.sidefx.com/docs/houdini/dopparticles/emitting.html)
+【[[emitting.html_Emitting]]】
     
-- [Network Flow（）](https://www.sidefx.com/docs/houdini/dopparticles/network_flow.html)
-    
+- [Network Flow（网络流程）](https://www.sidefx.com/docs/houdini/dopparticles/network_flow.html)
+【[[network_flow.html_Network Flow]]】
 
-## BEHAVIOR
+## BEHAVIOR（行为）
 
 - [Applying forces（）](https://www.sidefx.com/docs/houdini/dopparticles/forces.html)
     

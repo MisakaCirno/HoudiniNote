@@ -212,10 +212,11 @@ strong::selection {
     -webkit-text-fill-color: #eb6f92;
 }
 
+/*斜体两边的符号*/
 .cm-formatting.cm-formatting-strong.cm-strong,
 .cm-formatting.cm-formatting-em.cm-em {
     color: var(--text-faint) !important;
-    opacity: 0.25;
+    /*opacity: 0.25;*/
 }
 
 .cm-strong:not(.cm-formatting-strong),
@@ -945,4 +946,23 @@ body {
 .markdown-preview-view mark {
     color: #b5ce9b;
     background: none;
+}
+
+/*高亮背景色*/
+.cm-s-obsidian span.cm-highlight {
+    color: #b5ce9b;
+    /*background: none;*/
+}
+
+/*也是高亮背景色，与上面莫名其妙冲突*/
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+    background-color: #00000000;
+    color: #b5ce9b;
+}
+
+/*表格的对齐*/
+.markdown-preview-view table {
+    margin-left: auto;
+    margin-right: auto;
   }

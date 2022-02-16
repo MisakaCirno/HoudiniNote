@@ -4,5 +4,6 @@
   "readableLineLength": false,
   "alwaysUpdateLinks": true,
   "communityThemeSortOrder": "release",
-  "showLineNumber": true
+  "showLineNumber": true,
+  "attachmentFolderPath": "文档翻译/附件"
 }

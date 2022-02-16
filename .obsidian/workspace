@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "c5622451148914b1",
+        "id": "ad266b739e35e7da",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "文档翻译/model/index.html_Geometry.md",
-            "mode": "preview"
+            "file": "文档翻译/dyno/index.html_Dynamics.md",
+            "mode": "source"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "文档翻译/model/index.html_Geometry.md",
+                "file": "文档翻译/dyno/index.html_Dynamics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -85,7 +85,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "文档翻译/model/index.html_Geometry.md"
+                "file": "文档翻译/dyno/index.html_Dynamics.md"
               }
             }
           }
@@ -96,17 +96,17 @@
     "direction": "horizontal",
     "width": 371
   },
-  "active": "c5622451148914b1",
+  "active": "ad266b739e35e7da",
   "lastOpenFiles": [
-    "文档翻译/model/index.html_Geometry.md",
-    "文档翻译/dopparticles/index.html_Particles in Dynamics.md",
-    "文档翻译/character/rigtreeview.html_Character Rig Tree View.md",
-    "文档翻译/character/object_level/index.html_Object-level characters.md",
-    "文档翻译/character/kinefx/index.html_KineFX.md",
-    "文档翻译/basics/object.html_Working with objects.md",
-    "文档翻译/character/index.html_Character.md",
-    "文档翻译/Mi-节点分类.md",
+    "文档翻译/dyno/index.html_Dynamics.md",
     "文档翻译/index.html.md",
-    "未命名.md"
+    "文档翻译/model/index.html_Geometry.md",
+    "页面开头模板.md",
+    "文档翻译/dopparticles/network_flow.html_Network Flow.md",
+    "文档翻译/dopparticles/index.html_Particles in Dynamics.md",
+    "文档翻译/dopparticles/emitting.html_Emitting.md",
+    "文档翻译/character/rigtreeview.html_Character Rig Tree View.md",
+    "文档翻译/basics/object.html_Working with objects.md",
+    "文档翻译/character/kinefx/index.html_KineFX.md"
   ]
 }

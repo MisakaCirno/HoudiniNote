@@ -115,6 +115,7 @@ How to create, style, and add dynamics to hair and fur.
 
 ## [Particles（粒子）]
 [Particles（粒子）](https://www.sidefx.com/docs/houdini/dopparticles/index.html "How to create particle simulations.")
+【[[index.html_Particles in Dynamics]]】
 How to create particle simulations.
 ==如何创建粒子模拟。==
 
