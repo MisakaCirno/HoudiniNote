@@ -1,0 +1,14 @@
+{
+  "shimmering-focus@@hide-settings-button": false,
+  "shimmering-focus@@show-close-button": true,
+  "shimmering-focus@@show-sidebar-tabs": true,
+  "shimmering-focus@@show-titlebar": true,
+  "shimmering-focus@@show-titlebar-text": true,
+  "shimmering-focus@@show-ribbons": true,
+  "shimmering-focus@@show-header-bar": true,
+  "shimmering-focus@@show-statusbar": true,
+  "shimmering-focus@@default-statusbar": false,
+  "shimmering-focus@@show-scrollbar": true,
+  "shimmering-focus@@permanently-show-collapse-indicators": false,
+  "shimmering-focus@@show-starred-nav-buttons": false
+}

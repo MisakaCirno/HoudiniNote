@@ -1,0 +1,112 @@
+{
+  "main": {
+    "id": "731d140e6cb69faf",
+    "type": "split",
+    "children": [
+      {
+        "id": "c5622451148914b1",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "文档翻译/model/index.html_Geometry.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e7d6f54c2ef761c6",
+    "type": "split",
+    "children": [
+      {
+        "id": "d746e901b0804270",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2573a48f75fe8171",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "ce732305191a8024",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 324
+  },
+  "right": {
+    "id": "21099c094e138010",
+    "type": "split",
+    "children": [
+      {
+        "id": "ec895ed3562bb97c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29bb0d595f27cfa5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "文档翻译/model/index.html_Geometry.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5fd1c91dd4dc4c5b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "文档翻译/model/index.html_Geometry.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 371
+  },
+  "active": "c5622451148914b1",
+  "lastOpenFiles": [
+    "文档翻译/model/index.html_Geometry.md",
+    "文档翻译/dopparticles/index.html_Particles in Dynamics.md",
+    "文档翻译/character/rigtreeview.html_Character Rig Tree View.md",
+    "文档翻译/character/object_level/index.html_Object-level characters.md",
+    "文档翻译/character/kinefx/index.html_KineFX.md",
+    "文档翻译/basics/object.html_Working with objects.md",
+    "文档翻译/character/index.html_Character.md",
+    "文档翻译/Mi-节点分类.md",
+    "文档翻译/index.html.md",
+    "未命名.md"
+  ]
+}
