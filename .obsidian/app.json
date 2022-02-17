@@ -5,5 +5,11 @@
   "alwaysUpdateLinks": true,
   "communityThemeSortOrder": "release",
   "showLineNumber": true,
-  "attachmentFolderPath": "文档翻译/附件"
+  "attachmentFolderPath": "文档翻译/附件",
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

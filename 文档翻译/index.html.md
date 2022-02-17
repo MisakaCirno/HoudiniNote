@@ -106,6 +106,7 @@ How to create and simulate crowds of characters in Houdini.
 
 ## [Hair and fur（头发和毛皮）]
 [Hair and fur（头发和毛皮）](https://www.sidefx.com/docs/houdini/fur/index.html "How to create, style, and add dynamics to hair and fur.")
+【[[index.html_Hair and fur]]】
 How to create, style, and add dynamics to hair and fur.
 ==如何创建、设计和添加头发和毛皮的动态。==
 
@@ -122,14 +123,15 @@ How to create particle simulations.
 
 ## [Dynamics（动力学）]
 [Dynamics（动力学）](https://www.sidefx.com/docs/houdini/dyno/index.html "How to use Houdini’s dynamics networks to create simulations.")
+【[[index.html_Dynamics]]】
 How to use Houdini’s dynamics networks to create simulations.
 ==如何使用胡迪尼的动力学网络来创建模拟。==
 
 
-## [Vellum]
-[Vellum](https://www.sidefx.com/docs/houdini/vellum/index.html "Vellum uses a Position Based Dynamics approach to cloth, hair, grains, fluids, and softbody objects.")
+## [Vellum（牛皮纸）]
+[Vellum（牛皮纸）](https://www.sidefx.com/docs/houdini/vellum/index.html "Vellum uses a Position Based Dynamics approach to cloth, hair, grains, fluids, and softbody objects.")
 Vellum uses a Position Based Dynamics approach to cloth, hair, grains, fluids, and softbody objects.
-==Vellum使用基于位置的动力学方法来处理布料、毛发、颗粒、流体和软体物体。==
+==牛皮纸使用基于位置的动力学方法来处理布料、毛发、颗粒、流体和软体物体。==
 
 
 ## [Pyro（火焰）]
@@ -156,8 +158,8 @@ How to simulate grainy materials (such as sand).
 ==如何模拟颗粒状的材料（如沙子）。==
 
 
-## [Finite elements（有限元素）]
-[Finite elements（有限元素）](https://www.sidefx.com/docs/houdini/finiteelements/index.html "How to create and simulate deformable objects")
+## [Finite elements（有限元）]
+[Finite elements（有限元）](https://www.sidefx.com/docs/houdini/finiteelements/index.html "How to create and simulate deformable objects")
 How to create and simulate deformable objects
 ==如何创建和模拟可变形的物体==
 
@@ -224,6 +226,7 @@ TOP nodes define a workflow where data is fed into the network, turned into work
 
 ## [Solaris]
 [Solaris](https://www.sidefx.com/docs/houdini/solaris/index.html "Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework.")
+【[[index.html_Solaris]]】
 Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework.
 ==Solaris是胡迪尼基于通用场景描述（USD）框架的场景构建、布局、照明和渲染工具的总称。==
 

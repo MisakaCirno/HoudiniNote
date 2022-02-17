@@ -2,6 +2,8 @@
 
 [Emitting (sidefx.com)](https://www.sidefx.com/docs/houdini/dopparticles/emitting.html)
 
+***
+
 There are two main way to create particles: from geometry or from a point in space. There are tools on the **Particles** tab of the [shelf](https://www.sidefx.com/docs/houdini/shelf/index.html "How to use and customize the icons on the shelf at the top of the main window.") that let you create particle systems. Clicking the [Location](https://www.sidefx.com/docs/houdini/nodes/dop/poplocation.html "A POP solver that generates particles at a point.") button will allow you to select a point in space from which to emit particles, and the [Source](https://www.sidefx.com/docs/houdini/nodes/dop/popsource.html "A POP node that generates particles from geometry.") button will allow you to choose a geometry object from which to emit particles.
 ==主要有两种方式来创建粒子：从几何上或从空间中的一个点。在工具架上的**Particles**标签里，有一些工具可以让你创建粒子系统。点击“Location”按钮，你就可以选择空间中的一个点来发射粒子，而“Source”按钮，则可以选择一个几何对象来发射粒子。==
 

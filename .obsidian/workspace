@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "ad266b739e35e7da",
+        "id": "556b6c7df551abbb",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "文档翻译/dyno/index.html_Dynamics.md",
-            "mode": "source"
+            "file": "文档翻译/examples/Object examples.md",
+            "mode": "preview"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "文档翻译/dyno/index.html_Dynamics.md",
+                "file": "文档翻译/examples/Object examples.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -85,7 +85,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "文档翻译/dyno/index.html_Dynamics.md"
+                "file": "文档翻译/examples/Object examples.md"
               }
             }
           }
@@ -96,17 +96,17 @@
     "direction": "horizontal",
     "width": 371
   },
-  "active": "ad266b739e35e7da",
+  "active": "556b6c7df551abbb",
   "lastOpenFiles": [
-    "文档翻译/dyno/index.html_Dynamics.md",
-    "文档翻译/index.html.md",
-    "文档翻译/model/index.html_Geometry.md",
-    "页面开头模板.md",
-    "文档翻译/dopparticles/network_flow.html_Network Flow.md",
-    "文档翻译/dopparticles/index.html_Particles in Dynamics.md",
-    "文档翻译/dopparticles/emitting.html_Emitting.md",
-    "文档翻译/character/rigtreeview.html_Character Rig Tree View.md",
-    "文档翻译/basics/object.html_Working with objects.md",
-    "文档翻译/character/kinefx/index.html_KineFX.md"
+    "文档翻译/examples/Object examples.md",
+    "文档翻译/examples/Render node examples.md",
+    "文档翻译/examples/SHOP examples.md",
+    "文档翻译/examples/VOP examples.md",
+    "文档翻译/examples/TOP (PDG) node examples.md",
+    "文档翻译/examples/SOP (Geometry) node examples.md",
+    "文档翻译/examples/Dynamics examples.md",
+    "文档翻译/examples/Compositing examples.md",
+    "文档翻译/examples/CHOP examples.md",
+    "文档翻译/fur/index.html_Hair and fur.md"
   ]
 }
