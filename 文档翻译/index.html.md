@@ -32,6 +32,7 @@ How to use the network and parameter editors to work in Houdini.
 
 ## [Examples（示例）]
 [Examples（示例）](https://www.sidefx.com/docs/houdini/examples/index.html "Example files showing how different nodes work.")
+【[[index.html_Node examples]]】
 Example files showing how different nodes work.
 ==展示不同节点是如何工作的示例文件。==
 

@@ -26,7 +26,9 @@ One improvement is that there is no longer a separation between manipulating gui
 > Note
 > Mantra uses the SOP network you create to do the grooming and does the cooking of the node network (SOP network) at render time. It does this without taking a license, which allows for rendering with Engine for hair, fur, and anything else that’s comprised of curves and points (grass).
 
-==Mantra使用你创建的SOP网络来梳理，并在渲染的时候对节点网络（SOP网络）进行烘焙。它这样做是不需要授权的，这样就可以用引擎来渲染头发、毛皮和一切由曲线和点组成的东西（例如草地）。 ==
+
+==Mantra使用你创建的SOP网络来梳理，并在渲染的时候对节点网络（SOP网络）进行烘焙。它这样做是不需要授权的，这样就可以用引擎来渲染头发、毛皮和一切由曲线和点组成的东西（例如草地）。==
+
 
 > Note
 > Grooming should always be done on the static mesh, not the animated mesh.
