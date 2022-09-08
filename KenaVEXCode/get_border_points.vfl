@@ -1,0 +1,31 @@
+//找到所有边缘点
+//判断思路：相连点小于4的就是边缘点（有些情况下非边缘点也只有3个相连点）
+int n_count = neighbourcount(0,@ptnum);
+int isUsed = point(0, "isUsed", @ptnum);
+int isFirstTime = detail(0,"isFristTime");
+
+if(n_count < 4 && isUsed != 1)
+{
+    setpointgroup(0, "BorderPoint", @ptnum, 1, "set");
+    //标记出来这是扩展的顶点
+    setpointgroup(0, "ExtendPoint", @ptnum, 1, "set");
+    
+    //如果是第一次执行，还需要记录它的y坐标
+    //以及计算相对距离，以便后面做remap映射
+    if(isFirstTime == 1)
+    {
+        //Y点起始距离
+        setpointattrib(0, "StartYPos", @ptnum, @P.y, "set");
+        //标记为起始点
+        setpointgroup(0, "OriginPoint", @ptnum, 1, "set");
+        //记录起始点的编号
+        setpointattrib(0, "OriginPointNumber", @ptnum, @ptnum, "set");
+        //计算距离
+        float totalDistance = @P.y - chf("../create_primitive/AxisTarget");
+        //循环的次数
+        int iterations = chi("../foreach_end1/iterations");
+        //每次Y轴移动的距离
+        float eachDistance = totalDistance / iterations;
+        setpointattrib(0, "EachDistance", @ptnum, eachDistance, "set");
+    }
+}

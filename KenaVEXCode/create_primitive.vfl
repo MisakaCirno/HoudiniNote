@@ -1,0 +1,191 @@
+//将点位进行排序
+int sortPtnum[] = sort(i[]@borderPointList);
+
+//获取新点的坐标
+vector getNewPointLocate(int targetPtnum)
+{
+    vector axisDirection = set(0,0,0);
+
+    //获取当前点的坐标
+    vector pointPos = point(0, "P", targetPtnum);
+
+    //计算新点坐标移动的方向
+    if(pointPos.x > 0)
+    {axisDirection.x = 1;}
+    else
+    {axisDirection.x = -1;}
+
+    if(pointPos.z > 0)
+    {axisDirection.z = 1;}
+    else
+    {axisDirection.z = -1;}
+
+    //点新的坐标
+    float newXPos = pointPos.x;
+    float newZPos = pointPos.z;
+
+    float newYPos = pointPos.y;
+    //根据点在哪个边决定移动的方向
+    
+    //正负*要添加的值+原本的值
+    if(abs(pointPos.x) > abs(pointPos.z))
+    {
+        newXPos = chf("xPosAddValue") * axisDirection.x + pointPos.x;
+    }
+    else if(abs(pointPos.x) < abs(pointPos.z))
+    {
+        newZPos = chf("zPosAddValue") * axisDirection.z + pointPos.z;
+    }
+    else
+    {
+        newXPos = chf("xPosAddValue") * axisDirection.x + pointPos.x;
+        newZPos = chf("zPosAddValue") * axisDirection.z + pointPos.z;
+    }
+    
+    
+    //两种计算y坐标的模式
+    if(chs("../create_primitive/increaseMethod") == "byValue")
+    {
+        newYPos = chf("yPosAddValue") + pointPos.y;
+    }
+    else
+    {
+        float eachDistance = point(0, "eachDistance", targetPtnum);
+        newYPos = pointPos.y - eachDistance;
+    }
+
+
+    vector result = set(newXPos,newYPos,newZPos);
+    return result;
+}
+
+/*
+//获取相邻点的数量
+foreach (int pointNumber; sortPtnum){
+    int count = neighbourcount(0,pointNumber);
+    setpointattrib(0, "neighbourcount", pointNumber, count, "set");
+}
+*/
+
+int startPointNumber = sortPtnum[0];
+
+int prevPointNumber = -1;
+int nowPointNumber = startPointNumber;
+int nextPointNumber = -1;
+
+int startPointExtendNumber = -1;
+int prevPointExtendNumber = -1;
+
+int isEndPoint = 0;
+
+int count = 0;
+
+//printf("nowPointNumber %d\n",nowPointNumber);
+
+while(isEndPoint == 0)
+{
+    //printf("start: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
+    //为已经使用了的点添加属性，以便循环的时候可以区分出来
+    setpointattrib(0, "isUsed", nowPointNumber, 1 ,"set");
+    //取所有相邻点
+    int nowPointNeighbours[] = neighbours(0, nowPointNumber);
+    //printf("nowPointNeighbours: %g\n",nowPointNeighbours);
+
+    //遍历相邻点
+    foreach (int nowPointNeighbour; nowPointNeighbours)
+    {
+        //如果这个相邻点是边点 且 不是上一个点 那么就作为下一个点
+        int isBorderPoint = inpointgroup(0, "BorderPoint", nowPointNeighbour);
+        //printf("nowPointNeighbour: %d prevPointNumber: %d isBorderPoint: %d\n",nowPointNeighbour,prevPointNumber,isBorderPoint);
+        if(nowPointNeighbour != prevPointNumber && isBorderPoint == 1)
+        {
+            //printf("Here!\n");
+            //printf("get neighbour: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
+            nextPointNumber = nowPointNeighbour;
+            break;
+        }
+    }
+
+    //printf("after for loop: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
+
+    //获取now点 next点 扩展点的坐标
+    vector nowNewPointPos = getNewPointLocate(nowPointNumber);
+    vector nextNewPointPos = getNewPointLocate(nextPointNumber);
+
+    //创建now点 next点 的扩展点
+    //如果不是第一个点 那就不用创建now点的扩展点
+    int nowNewPointNumber = 0;
+    if(prevPointExtendNumber == -1)
+    {
+        nowNewPointNumber = addpoint(0, nowNewPointPos);
+    }
+    else
+    {
+        nowNewPointNumber = prevPointExtendNumber;
+    }
+
+    //如果是第一个点 就记录下它扩展点的位置 用于最后汇合面
+    if (startPointExtendNumber == -1) 
+    {
+        startPointExtendNumber = nowNewPointNumber;
+    }
+    int nextNewPointNumber = 0;
+    //如果下一个点是起始点 那么就没必要创建新的扩展点 直接用当时的点就行了
+    if(nextPointNumber == startPointNumber)
+    {
+        nextNewPointNumber = startPointExtendNumber;
+        isEndPoint = 1;
+        //printf("isEndPoint %d\n",isEndPoint);
+    }
+    else
+    {
+        nextNewPointNumber = addpoint(0, nextNewPointPos);
+        prevPointExtendNumber = nextNewPointNumber;
+    }
+    
+    //为新创建的点记录距离数据
+    float t =point(0, "eachDistance", nextPointNumber);
+    float nowDis = point(0, "eachDistance", nowPointNumber);
+    float nextDis = point(0, "eachDistance", nextPointNumber);
+    setpointattrib(0, "eachDistance", nowNewPointNumber, nowDis);
+    setpointattrib(0, "eachDistance", nextNewPointNumber, nextDis);
+    
+
+    //注意顺序，填反了面的法线方向也会是反的
+    //addprim(0, "poly", nowPointNumber, nowNewPointNumber, nextNewPointNumber, nextPointNumber);
+    addprim(0, "poly", nextPointNumber, nextNewPointNumber, nowNewPointNumber, nowPointNumber);
+    
+    //标记出来这是扩展的顶点，用于后续添加噪声
+    setpointgroup(0, "ExtendPoint", nextPointNumber, 1, "set");
+    setpointgroup(0, "ExtendPoint", nextNewPointNumber, 1, "set");
+    setpointgroup(0, "ExtendPoint", nowNewPointNumber, 1, "set");
+    setpointgroup(0, "ExtendPoint", nowPointNumber, 1, "set");
+
+    //清除边线组
+    setpointgroup(0, "BorderPoint", nowPointNumber, 0, "set");
+    setpointgroup(0, "BorderPoint", nextPointNumber, 0, "set");
+    //添加新的边线组
+    setpointgroup(0, "BorderPoint", nowNewPointNumber, 1, "set");
+    setpointgroup(0, "BorderPoint", nextNewPointNumber, 1, "set");
+
+    //移动到下一个点
+    //printf("before: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
+    prevPointNumber = nowPointNumber;
+    nowPointNumber = nextPointNumber;
+    //printf("after: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
+    //return;
+
+    //限制循环次数的功能
+    if(chs("isRestrictLoop") == "on")
+    {   
+        if(count == ch("index"))
+        {
+            return;
+        }
+    }
+    
+    count++;
+}
+
+//清空一下表，以保证下一次寻找到的边缘点互相不干涉
+i[]@borderPointList = {};
