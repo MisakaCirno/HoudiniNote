@@ -21,11 +21,16 @@ if(n_count < 4 && isUsed != 1)
         //记录起始点的编号
         setpointattrib(0, "OriginPointNumber", @ptnum, @ptnum, "set");
         //计算距离
-        float totalDistance = @P.y - chf("../create_primitive/AxisTarget");
+        float totalDistance = @P.y - chf("../create_primitive/yAxisTarget");
+        float t = chf("../create_primitive/yAxisTarget");
+        printf("yAxisTarget: %g\n",t);
         //循环的次数
-        int iterations = chi("../foreach_end1/iterations");
+        int numiterations = detail("../foreach_count1", "numiterations", 0);
+        printf("numiterations: %g\n",numiterations);
         //每次Y轴移动的距离
-        float eachDistance = totalDistance / iterations;
+        float eachDistance = totalDistance / numiterations;
+        printf("eachDistance: %g\n",eachDistance);
         setpointattrib(0, "EachDistance", @ptnum, eachDistance, "set");
     }
 }
+

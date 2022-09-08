@@ -2,7 +2,7 @@
 int sortPtnum[] = sort(i[]@borderPointList);
 
 //获取新点的坐标
-vector getNewPointLocate(int targetPtnum)
+vector getNewPointLocate(int targetPtnum; int originPtnum)
 {
     vector axisDirection = set(0,0,0);
 
@@ -50,8 +50,20 @@ vector getNewPointLocate(int targetPtnum)
     }
     else
     {
-        float eachDistance = point(0, "eachDistance", targetPtnum);
-        newYPos = pointPos.y - eachDistance;
+        float startYPos = point(0, "StartYPos", originPtnum);
+        float eachDistance = point(0, "EachDistance", originPtnum);
+
+        int numiterations = detail(1, "numiterations");
+        int ivalue = detail(1, "ivalue");
+        
+        if( numiterations != ivalue)
+        {
+            newYPos = startYPos - (eachDistance * ivalue) ;
+        }
+        else
+        {
+            newYPos = chf("yAxisTarget");
+        }
     }
 
 
@@ -80,37 +92,32 @@ int isEndPoint = 0;
 
 int count = 0;
 
-//printf("nowPointNumber %d\n",nowPointNumber);
-
 while(isEndPoint == 0)
 {
-    //printf("start: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
     //为已经使用了的点添加属性，以便循环的时候可以区分出来
     setpointattrib(0, "isUsed", nowPointNumber, 1 ,"set");
     //取所有相邻点
     int nowPointNeighbours[] = neighbours(0, nowPointNumber);
-    //printf("nowPointNeighbours: %g\n",nowPointNeighbours);
 
     //遍历相邻点
     foreach (int nowPointNeighbour; nowPointNeighbours)
     {
         //如果这个相邻点是边点 且 不是上一个点 那么就作为下一个点
         int isBorderPoint = inpointgroup(0, "BorderPoint", nowPointNeighbour);
-        //printf("nowPointNeighbour: %d prevPointNumber: %d isBorderPoint: %d\n",nowPointNeighbour,prevPointNumber,isBorderPoint);
         if(nowPointNeighbour != prevPointNumber && isBorderPoint == 1)
         {
-            //printf("Here!\n");
-            //printf("get neighbour: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
             nextPointNumber = nowPointNeighbour;
             break;
         }
     }
 
-    //printf("after for loop: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
+    //取出它们的原点
+    int nowOriginPtnum = point(0, "OriginPointNumber", nowPointNumber);
+    int nextOriginPtnum = point(0, "OriginPointNumber", nextPointNumber);
 
     //获取now点 next点 扩展点的坐标
-    vector nowNewPointPos = getNewPointLocate(nowPointNumber);
-    vector nextNewPointPos = getNewPointLocate(nextPointNumber);
+    vector nowNewPointPos = getNewPointLocate(nowPointNumber, nowOriginPtnum);
+    vector nextNewPointPos = getNewPointLocate(nextPointNumber, nextOriginPtnum);
 
     //创建now点 next点 的扩展点
     //如果不是第一个点 那就不用创建now点的扩展点
@@ -135,7 +142,6 @@ while(isEndPoint == 0)
     {
         nextNewPointNumber = startPointExtendNumber;
         isEndPoint = 1;
-        //printf("isEndPoint %d\n",isEndPoint);
     }
     else
     {
@@ -144,12 +150,16 @@ while(isEndPoint == 0)
     }
     
     //为新创建的点记录距离数据
-    float t =point(0, "eachDistance", nextPointNumber);
-    float nowDis = point(0, "eachDistance", nowPointNumber);
-    float nextDis = point(0, "eachDistance", nextPointNumber);
-    setpointattrib(0, "eachDistance", nowNewPointNumber, nowDis);
-    setpointattrib(0, "eachDistance", nextNewPointNumber, nextDis);
-    
+    /*
+    float nowDis = point(0, "EachDistance", nowPointNumber);
+    float nextDis = point(0, "EachDistance", nextPointNumber);
+    setpointattrib(0, "EachDistance", nowNewPointNumber, nowDis);
+    setpointattrib(0, "EachDistance", nextNewPointNumber, nextDis);
+    */
+    int nowOriginPointNumber = point(0, "OriginPointNumber", nowPointNumber);
+    int nextOriginPointNumber = point(0, "OriginPointNumber", nextPointNumber);
+    setpointattrib(0, "OriginPointNumber", nowNewPointNumber, nowOriginPointNumber);
+    setpointattrib(0, "OriginPointNumber", nextNewPointNumber, nextOriginPointNumber);
 
     //注意顺序，填反了面的法线方向也会是反的
     //addprim(0, "poly", nowPointNumber, nowNewPointNumber, nextNewPointNumber, nextPointNumber);
@@ -169,11 +179,8 @@ while(isEndPoint == 0)
     setpointgroup(0, "BorderPoint", nextNewPointNumber, 1, "set");
 
     //移动到下一个点
-    //printf("before: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
     prevPointNumber = nowPointNumber;
     nowPointNumber = nextPointNumber;
-    //printf("after: %d %d %d\n",prevPointNumber, nowPointNumber ,nextPointNumber);
-    //return;
 
     //限制循环次数的功能
     if(chs("isRestrictLoop") == "on")
