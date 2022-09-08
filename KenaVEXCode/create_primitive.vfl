@@ -58,7 +58,13 @@ vector getNewPointLocate(int targetPtnum; int originPtnum)
         
         if( numiterations != ivalue)
         {
-            newYPos = startYPos - (eachDistance * ivalue) ;
+            float rateMin = chf("yAxisFitMin");
+            float rateMax = chf("yAxisFitMax");
+            float nowRampValue = fit(ivalue, 0, numiterations, 0, 1);
+            float rampValue = chramp("yAxisRateRamp", nowRampValue);
+            float rate = fit01(rampValue, rateMin, rateMax);
+
+            newYPos = (startYPos - (eachDistance * ivalue)) * rate;
         }
         else
         {
